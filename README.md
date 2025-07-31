@@ -105,3 +105,50 @@ These scores indicate a robust model, with strong performance across all classes
 Install the required packages using:
 ```bash
 pip install streamlit numpy joblib pillow tensorflow scikit-learn opencv-python roboflow matplotlib seaborn
+```
+
+###Clone the repository
+```bash
+git clone https://github.com/your-username/teavision.git
+cd teavision
+```
+
+###Model Files
+-Download or train the model using `tea_proejct.ipynb` to generate `tea_model.pkl` and `label_encoder.pkl`.
+-Place them in the project root directory.
+
+
+## Usage
+
+1. Launch the Streamlit app:
+   ```bash
+   streamlit run tea_grade_app/app.py
+   ```
+   
+2.Navigate using the sidebar:
+-Home: View the welcome message and usage guide.
+-About: Learn more about the project.
+-Tea Grading: Upload an image and click "Predict" to see the grade.
+
+3. Upload a clear, well-lit tea leaf image for best results.
+
+## Future Improvements
+
+This project could be further enhanced by:
+
+-Widening the Grading System: Incorporating a custom dataset with additional grades or regional tea varieties to increase versatility.
+-User Features: Adding batch processing or real-time camera input for enhanced usability.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+-Thanks to the tea farming community and Roboflow for dataset inspiration.
+- Built with love using TensorFlow, scikit-learn, Streamlit, and OpenCV.
+
+Happy grading with TeaVision! 🍵
+
+
+
