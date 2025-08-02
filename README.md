@@ -94,18 +94,18 @@ BrewGrade is an AI-powered Streamlit app for predicting tea leaf grades using th
 - **Overview**: Welcomes users with a gradient banner and tea leaf image.
 - **Content**: Introduces AI-powered grading, lists Pekoe grades (FTGFOP, GFOP, OP, Reject), and provides usage steps (snap, upload, predict).
 - **Screenshot**:
-  ![Home Page Screenshot](screenshots/home_page_screenshot.png)
+  ![Home Page Screenshot](images/web_home.jpg)
    ### How to Use TeaVision
 1. **Snap a stunning tea leaf photo!**
 2. **Let computer vision unveil its pekoe grade.**
 3. **Perfect for farmers & tea producers to classify.**
-
+ ![How To Use](images/web_how_to_use.jpg)
 
 ### About Page
 - **Overview**: Explains the Pekoe Grading System used in Sri Lanka and India.
 - **Content**: Details FTGFOP, GFOP, OP, and Reject grades in cards, grading criteria (shape, tips, etc.), and its importance for farmers and buyers.
 - **Screenshot**:
-  ![About Page Screenshot](screenshots/about_page_screenshot.png)
+  ![About Page Screenshot](images/web_about.jpg)
 
   #### Pekoe Grades Unveiled
 - **FTGFOP**: Finest Tippy Golden Flowery Orange Pekoe – Elite quality!
@@ -117,7 +117,7 @@ BrewGrade is an AI-powered Streamlit app for predicting tea leaf grades using th
 - **Overview**: Core feature for uploading and predicting tea leaf grades.
 - **Content**: Image uploader, two-column layout (image display, predict button), and AI-driven grade prediction (MobileNetV2 + SVM).
 - **Screenshot**:
-  ![Tea Grading Page Screenshot](screenshots/tea_grading_page_screenshot.png)
+  ![Tea Grading Page Screenshot](images/web_predict.jpg)
 
   ### Running the App
 1. Install dependencies (see below).
