@@ -187,7 +187,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Thanks to the tea farming community and Roboflow for dataset inspiration.
 - Built with love using TensorFlow, scikit-learn, Streamlit, and OpenCV.
 
-Happy grading with TeaVision! 🍵
+Happy grading with BrewGrade! 🍵
 
 
 
