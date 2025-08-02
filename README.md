@@ -43,20 +43,42 @@ The dataset is stored locally after download. This grading system can be widened
 
 ## Model Training
 
-### Architecture
+### Architecture  
 BrewGrade employs a hybrid approach:
-- **Feature Extractor**: MobileNetV2, a pre-trained CNN on ImageNet, extracts features from tea leaf images using average pooling (via `GlobalAveragePooling2D`) to generate a fixed-size feature vector.
-- **Classifier**: A Support Vector Machine with 100 estimators classifies the extracted features into the four pekoe grades.
+
+- **Feature Extractor**: `MobileNetV2`, a pre-trained Convolutional Neural Network (CNN) on ImageNet, extracts features from tea leaf images using average pooling (`GlobalAveragePooling2D`) to generate fixed-size feature vectors.  
+- **Classifier**: A **Support Vector Machine (SVM)** with an RBF kernel classifies the extracted features into four Pekoe grades.
+
+---
 
 ### Training Process
-- **Framework**: TensorFlow for CNN feature extraction and scikit-learn for Support Vector Machine training.
-- **Data Preparation**: 
-  - Images are loaded from `train` and `valid` directories, features extracted using MobileNetV2, and labels encoded using `LabelEncoder`.
-  - Data split: 80% training, 20% testing (via `train_test_split` with `test_size=0.2`).
-- **Hyperparameters**:
-  - Support Vector Machine: `n_estimators=100`, `random_state=42`.
-  - MobileNetV2: Frozen layers, input shape `(224, 224, 3)`.
-- **Hardware**: Training can be performed on a CPU or GPU (e.g., NVIDIA GTX 1080), with feature extraction accelerated by GPU if available.
+
+- **Frameworks Used**:  
+  - **TensorFlow** – For CNN-based feature extraction using MobileNetV2.  
+  - **scikit-learn** – For SVM classification and hyperparameter tuning.
+
+- **Data Preparation**:  
+  - Tea leaf images are resized to `224x224` pixels and preprocessed using MobileNetV2’s `preprocess_input()` function.  
+  - Features are extracted from both training and validation sets.  
+  - Labels are encoded using `LabelEncoder` from scikit-learn.  
+  - Dataset is split into 80% training and 20% testing using `train_test_split` with `test_size=0.2`.
+
+- **Hyperparameter Tuning**:  
+  - SVM parameters `C` and `gamma` were tuned on the validation set using a grid search strategy.  
+  - Grid Search Space:
+    - `C`: `[0.1, 1, 10, 100]`  
+    - `gamma`: `['scale', 0.01, 0.001]`  
+  - Models were evaluated using **macro-averaged F1-score** to ensure balanced performance across all classes.  
+  - The best parameters found were:  
+    ```python
+    {'C': 10, 'gamma': 'scale'}  # (example values – replace with your actual best params)
+    ```
+
+- **Hardware Requirements**:  
+  - The model can be trained and run on both **CPU and GPU**.  
+  - Feature extraction using MobileNetV2 benefits from GPU acceleration (e.g., NVIDIA GTX 1080 or higher).
+
+
 
 ### Model Saving
 The trained Random Forest model can be saved using joblib (e.g., as `tea_model.pkl`), though the notebook does not explicitly save it. The label encoder can be saved as `label_encoder.pkl`.
