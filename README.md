@@ -86,7 +86,7 @@ The BrewGrade model achieved the following performance metrics on the final test
 These scores indicate a robust model, with strong performance across all classes. The accuracy could potentially be improved further with a larger dataset or hyperparameter tuning.
 
 
-### Streamlit App
+## Streamlit App
 
 BrewGrade is an AI-powered Streamlit app for predicting tea leaf grades using the Pekoe Grading System. It has three main pages: Home, About, and Tea Grading.
 
