@@ -134,6 +134,7 @@ BrewGrade is an AI-powered Streamlit app for predicting tea leaf grades using th
 Install the required packages using:
 ```bash
 pip install streamlit numpy joblib pillow tensorflow scikit-learn opencv-python roboflow matplotlib seaborn
+```
 ## Installation
 
 ### Prerequisites
