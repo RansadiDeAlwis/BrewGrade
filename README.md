@@ -81,7 +81,7 @@ BrewGrade employs a hybrid approach:
 
 
 ### Model Saving
-The trained Random Forest model can be saved using joblib (e.g., as `tea_model.pkl`), though the notebook does not explicitly save it. The label encoder can be saved as `label_encoder.pkl`.
+The trained SVM model can be saved using joblib (`tea_model.pkl`), though the notebook does not explicitly save it. The label encoder can be saved as `label_encoder.pkl`.
 
 ## Accuracy Scores
 
