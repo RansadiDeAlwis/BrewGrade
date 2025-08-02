@@ -71,7 +71,7 @@ BrewGrade employs a hybrid approach:
   - Models were evaluated using **macro-averaged F1-score** to ensure balanced performance across all classes.  
   - The best parameters found were:  
     ```python
-    {'C': 10, 'gamma': 'scale'}  # (example values – replace with your actual best params)
+    {'C': 10, 'gamma': 'scale'}  
     ```
 
 - **Hardware Requirements**:  
