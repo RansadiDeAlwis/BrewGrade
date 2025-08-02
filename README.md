@@ -1,6 +1,6 @@
 # BrewGrade: AI-Powered Tea Leaf Grade Prediction
 
-Welcome to BrewGrade, an innovative AI-powered application designed to predict tea leaf grades using computer vision. This project empowers tea farmers and producers by classifying tea leaves into four pekoe grades: FTGFOP (Finest Tippy Golden Flowery Orange Pekoe), GFOP (Golden Flowery Orange Pekoe), OP (Orange Pekoe), and Reject. Built with MobileNetV2 for feature extraction and a Random Forest Classifier for classification, BrewGrade offers a fast, reliable, and user-friendly solution for tea quality assessment.
+Welcome to BrewGrade, an innovative AI-powered application designed to predict tea leaf grades using computer vision. This project empowers tea farmers and producers by classifying tea leaves into four pekoe grades: FTGFOP (Finest Tippy Golden Flowery Orange Pekoe), GFOP (Golden Flowery Orange Pekoe), OP (Orange Pekoe), and Reject. Built with MobileNetV2 for feature extraction and a Support Vector Machine for classification, BrewGrade offers a fast, reliable, and user-friendly solution for tea quality assessment.
 
 ## Project Overview
 
@@ -9,7 +9,7 @@ BrewGrade leverages advanced computer vision techniques to analyze tea leaf imag
 - **Tea Producers**: To streamline production and ensure consistency.
 - **Enthusiasts**: To explore tea grading with cutting-edge technology.
 
-The project uses MobileNetV2, a lightweight Convolutional Neural Network (CNN) pre-trained on ImageNet, to extract features, followed by a Random Forest Classifier for grade prediction, achieving an accuracy of approximately 84% on the test set. The Streamlit-based web app provides an intuitive interface for uploading images and receiving instant predictions.
+The project uses MobileNetV2, a lightweight Convolutional Neural Network (CNN) pre-trained on ImageNet, to extract features, followed by a Support Vector Machine(SVM) for grade prediction, achieving an accuracy of approximately 84% on the test set. The Streamlit-based web app provides an intuitive interface for uploading images and receiving instant predictions.
 
 ## Dataset
 
@@ -46,15 +46,15 @@ The dataset is stored locally after download. This grading system can be widened
 ### Architecture
 BrewGrade employs a hybrid approach:
 - **Feature Extractor**: MobileNetV2, a pre-trained CNN on ImageNet, extracts features from tea leaf images using average pooling (via `GlobalAveragePooling2D`) to generate a fixed-size feature vector.
-- **Classifier**: A Random Forest Classifier with 100 estimators classifies the extracted features into the four pekoe grades.
+- **Classifier**: A Support Vector Machine with 100 estimators classifies the extracted features into the four pekoe grades.
 
 ### Training Process
-- **Framework**: TensorFlow for CNN feature extraction and scikit-learn for Random Forest training.
+- **Framework**: TensorFlow for CNN feature extraction and scikit-learn for Support Vector Machine training.
 - **Data Preparation**: 
   - Images are loaded from `train` and `valid` directories, features extracted using MobileNetV2, and labels encoded using `LabelEncoder`.
   - Data split: 80% training, 20% testing (via `train_test_split` with `test_size=0.2`).
 - **Hyperparameters**:
-  - Random Forest: `n_estimators=100`, `random_state=42`.
+  - Support Vector Machine: `n_estimators=100`, `random_state=42`.
   - MobileNetV2: Frozen layers, input shape `(224, 224, 3)`.
 - **Hardware**: Training can be performed on a CPU or GPU (e.g., NVIDIA GTX 1080), with feature extraction accelerated by GPU if available.
 
